@@ -19,11 +19,22 @@ public class TreasureHunt {
 
 	public TreasureHunt() {
 		// The default constructor
+		this.sonars = DEFAULT_SONARS;
+		this.range = DEFAULT_RANGE;
+		this.state = "STARTED";
+		this.islands = new Grid();
 	}
 
 	public TreasureHunt(int height, int width, int landPercent, int sonars,
 			int range) {
 		// The constructor thatuses parameters
+		this.height = height;
+		this.width = width;
+		this.landPercent = landPercent;
+		this.sonars = sonars;
+		this.range = range;
+		this.state = "STARTED";
+		this.islands = new Grid(width, height, landPercent);
 	}
 
 	private void processCommand(String command) throws HeapFullException,
